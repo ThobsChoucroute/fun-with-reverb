@@ -13,4 +13,9 @@ class DeploymentController extends Controller
             "deployments" => Deployment::all(),
         ]);
     }
+
+    public function deploy(Deployment $deployment)
+    {
+        $deployment->deploy();
+    }
 }
