@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
+use App\Http\Controllers\DeploymentController;
 
-Route::get('/', function () {
-    return Inertia::render('Dashboard');
-})->name('dashboard');
+Route::controller(DeploymentController::class)->group(function () {
+    Route::get("/", "index")->name("deployments.index");
+});

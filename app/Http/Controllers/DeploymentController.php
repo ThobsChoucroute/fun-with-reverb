@@ -2,9 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Deployment;
+use Inertia\Inertia;
 
 class DeploymentController extends Controller
 {
-    //
+    public function index()
+    {
+        return Inertia::render("Dashboard", [
+            "deployments" => Deployment::all(),
+        ]);
+    }
 }
